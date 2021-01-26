@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PackageContents.xml" />
+    <None Remove="RevitLauncher.addin" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="RevitLauncher.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RevitSDK2017" Version="1.0.0" />
+  </ItemGroup>
+    <ItemGroup>
+      <Content Include="PackageContents.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="&quot;C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe&quot; sign /f $(ProjectDir)RevitLauncher.pfx /p te@3WuMK3wD9aF $(TargetPath)" />
+    </Target>
+ 
+
+</Project>

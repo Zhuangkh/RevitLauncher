@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLauncher", "RevitLauncher\RevitLauncher.csproj", "{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLauncher.Addin", "RevitLauncher.Addin\RevitLauncher.Addin.csproj", "{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RevitLauncher.Setup", "RevitLauncher.Setup\RevitLauncher.Setup.vdproj", "{53D85D63-B303-4710-91D5-46ED9A4ED8C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallerAction", "InstallerAction\InstallerAction.csproj", "{F8728E6E-183E-435C-A1E8-81FE80ED9A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Debug|x64.ActiveCfg = Debug|x64
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Debug|x64.Build.0 = Debug|x64
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Release|x64.ActiveCfg = Release|x64
+		{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}.Release|x64.Build.0 = Release|x64
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Debug|x64.ActiveCfg = Debug|x64
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Debug|x64.Build.0 = Debug|x64
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Release|x64.ActiveCfg = Release|x64
+		{0EAD059D-AA18-4D10-9CC9-5E9C250CA344}.Release|x64.Build.0 = Release|x64
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Debug|Any CPU.ActiveCfg = Debug
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Debug|x64.ActiveCfg = Debug
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Debug|x64.Build.0 = Debug
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|Any CPU.ActiveCfg = Release
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|x64.ActiveCfg = Release
+		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|x64.Build.0 = Release
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|x64.ActiveCfg = Debug|x64
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|x64.Build.0 = Debug|x64
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|x64.ActiveCfg = Release|x64
+		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90A18FF3-08F7-45D6-9CDB-C1F89B0FB4A1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RevitLauncher</Name>
+    <Assembly>RevitLauncher.Addin.dll</Assembly>
+    <ClientId>1A71F325-30E9-4D18-BB70-10FB4CFE4157</ClientId>
+    <FullClassName>RevitLauncher.Addin.App</FullClassName>
+    <Text>RevitLauncher</Text>
+    <VendorId>Zhuangkh</VendorId>
+    <VendorDescription>Zhuangkh, zhuangkh.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
