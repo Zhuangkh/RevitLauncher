@@ -1,7 +1,5 @@
 # RevitLauncher
 
----
-
 A Revit launcher integrated in the windows context menu.
 
 Automatically detect the Revit file version, support opening the file in the new process, or open in the current existing Revit process.
