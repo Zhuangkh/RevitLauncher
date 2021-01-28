@@ -22,8 +22,9 @@ namespace InstallerAction
             base.OnAfterInstall(savedState);
             Process myprocess = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo($"{path}\\srm.exe", _installScript);
+            startInfo.Verb = "runas";
             myprocess.StartInfo = startInfo;
-            myprocess.StartInfo.UseShellExecute = false;
+            myprocess.StartInfo.UseShellExecute = true;
             myprocess.Start();
 
         }
@@ -33,6 +34,7 @@ namespace InstallerAction
             base.OnBeforeUninstall(savedState);
             Process myprocess = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo($"{path}\\srm.exe", _uninstallScript);
+            startInfo.Verb = "runas";
             myprocess.StartInfo = startInfo;
             myprocess.StartInfo.UseShellExecute = false;
             myprocess.Start();
