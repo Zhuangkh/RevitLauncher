@@ -71,6 +71,24 @@ namespace RevitLauncher
             };
             #endregion
 
+            #region Locking Processes
+            List<ToolStripItem> lockingProcessesMenuItems = new List<ToolStripItem>();
+            var lockingProcesses = ProcessUtils.GetLockingProcesses(SelectedItemPaths.First());
+            foreach (Process lockingProcess in lockingProcesses)
+            {
+                string title = string.IsNullOrEmpty(lockingProcess.MainWindowTitle)
+                    ? Win32API.GetAllDesktopWindows().First(x => x.Pid.ToInt32() == lockingProcess.Id).WindowName
+                    : lockingProcess.MainWindowTitle;
+                var processItem = new ToolStripMenuItem()
+                {
+                    Text = title,
+                    Tag = lockingProcess
+                };
+                processItem.Click += LockingProcessItem_Click;
+                lockingProcessesMenuItems.Add(processItem);
+            }
+            #endregion
+
             #region 当前存在进程菜单
 
             List<ToolStripItem> processMenuItemsMatch = new List<ToolStripItem>();
@@ -103,7 +121,7 @@ namespace RevitLauncher
                 }
             }
             #endregion
-
+            
             #region 新进程菜单
             var curItem = new ToolStripMenuItem()
             {
@@ -144,6 +162,19 @@ namespace RevitLauncher
 
             launcherItem.DropDownItems.Add(verItem);
             launcherItem.DropDownItems.Add(new ToolStripSeparator());
+            if (lockingProcesses.Any())
+            {
+                launcherItem.DropDownItems.Add(new ToolStripMenuItem()
+                {
+                    Text = $"File Locking Processes",
+                    Enabled = false
+                });
+                foreach (ToolStripItem item in lockingProcessesMenuItems)
+                {
+                    launcherItem.DropDownItems.Add(item);
+}
+                launcherItem.DropDownItems.Add(new ToolStripSeparator());
+            }
             if (processMenuItemsMatch.Any())
             {
                 launcherItem.DropDownItems.Add(new ToolStripMenuItem()
@@ -200,6 +231,19 @@ namespace RevitLauncher
             {
                 Trace.WriteLine(exception.Message);
                 Trace.WriteLine(exception.StackTrace);
+            }
+        }
+
+        /// <summary>
+        /// 当前进程中打开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LockingProcessItem_Click(object sender, EventArgs e)
+        {
+            if ((sender as ToolStripMenuItem).Tag is Process process)
+            {
+                ProcessUtils.SwitchToProcess(process);
             }
         }
 
