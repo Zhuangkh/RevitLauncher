@@ -20,13 +20,13 @@ namespace RevitLauncher.Utils
         public static List<RevitProduct> GetAllInstalledRevitProducts()
         {
             List<RevitProduct> list = new List<RevitProduct>();
-            RevitProductUtility.initializeProductsDictionary();
+            RevitProductUtility.InitializeProductsDictionary();
             try
             {
-                List<string> installedRevitProductCodes = RevitProductUtility.getInstalledRevitProductCodes();
+                List<string> installedRevitProductCodes = RevitProductUtility.GetInstalledRevitProductCodes();
                 foreach (string productCode in installedRevitProductCodes)
                 {
-                    RevitProduct revitProduct = RevitProductUtility.getRevitProduct(productCode);
+                    RevitProduct revitProduct = RevitProductUtility.GetRevitProduct(productCode);
                     if (revitProduct != null)
                     {
                         list.Add(revitProduct);
@@ -40,7 +40,7 @@ namespace RevitLauncher.Utils
             return list;
         }
 
-        internal static LanguageType convertLanguageCodeToType(int code)
+        internal static LanguageType ConvertLanguageCodeToType(int code)
         {
             switch (code)
             {
@@ -97,7 +97,7 @@ namespace RevitLauncher.Utils
             return LanguageType.Unknown;
         }
 
-        internal static string convertLanguageTypeToCode(LanguageType languageType)
+        internal static string ConvertLanguageTypeToCode(LanguageType languageType)
         {
             switch (languageType)
             {
@@ -136,7 +136,7 @@ namespace RevitLauncher.Utils
             return "0409";
         }
 
-        internal static RevitVersion converVersionCodeToVersion(int code)
+        internal static RevitVersion ConverVersionCodeToVersion(int code)
         {
             switch (code)
             {
@@ -162,12 +162,14 @@ namespace RevitLauncher.Utils
                     return RevitVersion.Revit2020;
                 case 21:
                     return RevitVersion.Revit2021;
+                case 22:
+                    return RevitVersion.Revit2022;
                 default:
                     return RevitVersion.Unknown;
             }
         }
 
-        internal static ProductType convertDisciplineCodeToProductType(int code)
+        internal static ProductType ConvertDisciplineCodeToProductType(int code)
         {
             switch (code)
             {
@@ -184,7 +186,7 @@ namespace RevitLauncher.Utils
             return ProductType.Unknown;
         }
 
-        internal static string convertProductTypetoCode(ProductType product)
+        internal static string ConvertProductTypetoCode(ProductType product)
         {
             switch (product)
             {
@@ -209,57 +211,57 @@ namespace RevitLauncher.Utils
         /// Since 2012 we analysis the Revit product code (not include the dynamo) of RevitDB.dll component with a fixed pattern,
         /// please see RevitProductUtility::getRevitProduct method for more details.
         /// </summary>
-        private static void initializeProductsDictionary()
+        private static void InitializeProductsDictionary()
         {
-            if (RevitProductUtility.m_productsHashtable == null)
+            if (RevitProductUtility._mProductsHashtable == null)
             {
-                RevitProductUtility.m_productsHashtable = new Hashtable();
+                RevitProductUtility._mProductsHashtable = new Hashtable();
             }
             else
             {
-                RevitProductUtility.m_productsHashtable.Clear();
+                RevitProductUtility._mProductsHashtable.Clear();
             }
 
-            RevitProductUtility.m_productsHashtable.Add("{4AF99FCA-1D0C-4D5A-9BFE-0D4376A52B23}",
+            RevitProductUtility._mProductsHashtable.Add("{4AF99FCA-1D0C-4D5A-9BFE-0D4376A52B23}",
                 new RevitProduct(new Guid("{4AF99FCA-1D0C-4D5A-9BFE-0D4376A52B23}"), ProductType.Architecture,
                     AddInArchitecture.OS32bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{0EE1FCA9-7474-4143-8F22-E7AD998FACBF}",
+            RevitProductUtility._mProductsHashtable.Add("{0EE1FCA9-7474-4143-8F22-E7AD998FACBF}",
                 new RevitProduct(new Guid("{0EE1FCA9-7474-4143-8F22-E7AD998FACBF}"), ProductType.Structure,
                     AddInArchitecture.OS32bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{CCCB80C8-5CC5-4EB7-89D0-F18E405F18F9}",
+            RevitProductUtility._mProductsHashtable.Add("{CCCB80C8-5CC5-4EB7-89D0-F18E405F18F9}",
                 new RevitProduct(new Guid("{CCCB80C8-5CC5-4EB7-89D0-F18E405F18F9}"), ProductType.MEP,
                     AddInArchitecture.OS32bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{7A177659-6ADE-439F-9B68-AAB03739A5CF}",
+            RevitProductUtility._mProductsHashtable.Add("{7A177659-6ADE-439F-9B68-AAB03739A5CF}",
                 new RevitProduct(new Guid("{7A177659-6ADE-439F-9B68-AAB03739A5CF}"), ProductType.Revit,
                     AddInArchitecture.OS32bit, RevitVersion.Revit2013));
-            RevitProductUtility.m_productsHashtable.Add("{94D463D0-2B13-4181-9512-B27004B1151A}",
+            RevitProductUtility._mProductsHashtable.Add("{94D463D0-2B13-4181-9512-B27004B1151A}",
                 new RevitProduct(new Guid("{94D463D0-2B13-4181-9512-B27004B1151A}"), ProductType.Architecture,
                     AddInArchitecture.OS64bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{23853368-22DD-4817-904B-DB04ADE9B0C8}",
+            RevitProductUtility._mProductsHashtable.Add("{23853368-22DD-4817-904B-DB04ADE9B0C8}",
                 new RevitProduct(new Guid("{23853368-22DD-4817-904B-DB04ADE9B0C8}"), ProductType.Structure,
                     AddInArchitecture.OS64bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{C31F3560-0007-4955-9F65-75CB47F82DB5}",
+            RevitProductUtility._mProductsHashtable.Add("{C31F3560-0007-4955-9F65-75CB47F82DB5}",
                 new RevitProduct(new Guid("{C31F3560-0007-4955-9F65-75CB47F82DB5}"), ProductType.MEP,
                     AddInArchitecture.OS64bit, RevitVersion.Revit2011));
-            RevitProductUtility.m_productsHashtable.Add("{2F816EFF-FACE-4000-AC88-C9AAA4A05E5D}",
+            RevitProductUtility._mProductsHashtable.Add("{2F816EFF-FACE-4000-AC88-C9AAA4A05E5D}",
                 new RevitProduct(new Guid("{2F816EFF-FACE-4000-AC88-C9AAA4A05E5D}"), ProductType.Revit,
                     AddInArchitecture.OS64bit, RevitVersion.Revit2013));
         }
 
         /// <summary> Gets information of installed Revit from registry. </summary>
-        private static RevitProduct getInstalledProductInfo(string productRegGUID)
+        private static RevitProduct GetInstalledProductInfo(string productRegGuid)
         {
-            if (RevitProductUtility.m_productsHashtable.ContainsKey(productRegGUID))
+            if (RevitProductUtility._mProductsHashtable.ContainsKey(productRegGuid))
             {
-                RevitProduct revitProduct = (RevitProduct) RevitProductUtility.m_productsHashtable[productRegGUID];
+                RevitProduct revitProduct = (RevitProduct)RevitProductUtility._mProductsHashtable[productRegGuid];
                 RegistryKey registryKey = Registry.LocalMachine
-                    .OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall").OpenSubKey(productRegGUID);
+                    .OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall").OpenSubKey(productRegGuid);
                 if (registryKey == null)
                 {
-                    string subKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + productRegGUID;
+                    string subKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + productRegGuid;
                     UIntPtr hKey;
-                    if (RevitProductUtility.RegOpenKeyEx(RevitProductUtility.HKEY_LOCAL_MACHINE, subKey, 0, 131609,
-                        out hKey) != 0 && RevitProductUtility.RegOpenKeyEx(RevitProductUtility.HKEY_LOCAL_MACHINE,
+                    if (Win32API.RegOpenKeyEx(RevitProductUtility._hkeyLocalMachine, subKey, 0, 131609,
+                        out hKey) != 0 && Win32API.RegOpenKeyEx(RevitProductUtility._hkeyLocalMachine,
                         subKey, 0, 131353, out hKey) != 0)
                     {
                         return null;
@@ -269,27 +271,27 @@ namespace RevitLauncher.Utils
                     uint code = 0u;
                     StringBuilder stringBuilder = new StringBuilder(1024);
                     uint num2;
-                    RevitProductUtility.RegQueryValueEx(hKey, "InstallLocation", 0, out num2, stringBuilder, out num);
+                    Win32API.RegQueryValueEx(hKey, "InstallLocation", 0, out num2, stringBuilder, out num);
                     revitProduct.SetInstallLocation(stringBuilder.ToString());
                     num = 1024u;
-                    RevitProductUtility.RegQueryValueEx(hKey, "DisplayName", 0, out num2, stringBuilder, out num);
+                    Win32API.RegQueryValueEx(hKey, "DisplayName", 0, out num2, stringBuilder, out num);
                     revitProduct.SetName(stringBuilder.ToString());
-                    RevitProductUtility.RegQueryValueEx(hKey, "Language", 0, out num2, out code, out num);
-                    revitProduct.setLanguage(RevitProductUtility.convertLanguageCodeToType((int) code));
+                    Win32API.RegQueryValueEx(hKey, "Language", 0, out num2, out code, out num);
+                    revitProduct.setLanguage(RevitProductUtility.ConvertLanguageCodeToType((int)code));
                     revitProduct.SetAllUsersAddInFolder(
                         Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
                         "\\Autodesk\\Revit\\AddIns\\" + revitProduct.Version.ToString().Replace("Revit", ""));
                     revitProduct.SetCurrentUserAddInFolder(
                         Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
                         "\\Autodesk\\Revit\\AddIns\\" + revitProduct.Version.ToString().Replace("Revit", ""));
-                    RevitProductUtility.RegCloseKey(hKey);
+                    Win32API.RegCloseKey(hKey);
                 }
                 else
                 {
-                    revitProduct.SetInstallLocation((string) registryKey.GetValue("InstallLocation"));
-                    revitProduct.SetName((string) registryKey.GetValue("DisplayName"));
+                    revitProduct.SetInstallLocation((string)registryKey.GetValue("InstallLocation"));
+                    revitProduct.SetName((string)registryKey.GetValue("DisplayName"));
                     revitProduct.setLanguage(
-                        RevitProductUtility.convertLanguageCodeToType((int) registryKey.GetValue("Language")));
+                        RevitProductUtility.ConvertLanguageCodeToType((int)registryKey.GetValue("Language")));
                     revitProduct.SetAllUsersAddInFolder(
                         Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
                         "\\Autodesk\\Revit\\AddIns\\" + revitProduct.Version.ToString().Replace("Revit", ""));
@@ -305,39 +307,13 @@ namespace RevitLauncher.Utils
             return null;
         }
 
-        [DllImport("advapi32.dll", CharSet = CharSet.Auto)]
-        private static extern int RegOpenKeyEx(UIntPtr hKey, string subKey, int ulOptions, int samDesired,
-            out UIntPtr hkResult);
-
-        [DllImport("advapi32.dll", CharSet = CharSet.Auto)]
-        private static extern int RegQueryValueEx(UIntPtr hKey, string lpValueName, int lpReserved, out uint lpType,
-            StringBuilder lpData, out uint lpcbData);
-
-        [DllImport("advapi32.dll", CharSet = CharSet.Auto)]
-        private static extern int RegQueryValueEx(UIntPtr hKey, string lpValueName, int lpReserved, out uint lpType,
-            out uint lpData, out uint lpcbData);
-
-        [DllImport("advapi32.dll", SetLastError = true)]
-        private static extern int RegCloseKey(UIntPtr hKey);
-
-        [DllImport("msi.dll", CharSet = CharSet.Unicode)]
-        private static extern uint MsiEnumClients(string szComponent, uint iProductIndex, string lpProductBuf);
-
-        [DllImport("msi.dll", CharSet = CharSet.Unicode)]
-        private static extern int MsiGetComponentPath(string szProduct, string szComponent, string lpPathBuf,
-            out uint pcchBuf);
-
-        [DllImport("msi.dll", CharSet = CharSet.Unicode)]
-        private static extern int MsiGetProductInfo(string product, string property, string valueBuf, out int len);
-
         /// <summary> Gets product codes of the installed Revits. </summary>
-        public static List<string> getInstalledRevitProductCodes()
+        public static List<string> GetInstalledRevitProductCodes()
         {
             List<string> list = new List<string>();
-            string text = new string('0', 38);
-            string szComponent = "{DF7D485F-B8BA-448E-A444-E6FB1C258912}";
+            string text = new string('0', GuidStringSize);
             uint num = 0u;
-            while (RevitProductUtility.MsiEnumClients(szComponent, num++, text) == 0u)
+            while (Win32API.MsiEnumClients(RevitDBComponentID, num++, text) == 0u)
             {
                 string item = string.Copy(text);
                 list.Add(item);
@@ -347,7 +323,7 @@ namespace RevitLauncher.Utils
         }
 
         /// <summary> Gets product information with the product code. </summary>
-        private static RevitProduct getRevitProduct(string productCode)
+        private static RevitProduct GetRevitProduct(string productCode)
         {
             Regex regex =
                 new Regex(
@@ -359,24 +335,24 @@ namespace RevitLauncher.Utils
                 AddInArchitecture architecture = (match.Result("${Platform}").CompareTo("0") == 0)
                     ? AddInArchitecture.OS32bit
                     : AddInArchitecture.OS64bit;
-                RevitVersion version = RevitProductUtility.converVersionCodeToVersion(code);
+                RevitVersion version = RevitProductUtility.ConverVersionCodeToVersion(code);
                 int code2 = int.Parse(match.Result("${Discipline}"), NumberStyles.AllowHexSpecifier);
-                ProductType product = RevitProductUtility.convertDisciplineCodeToProductType(code2);
+                ProductType product = RevitProductUtility.ConvertDisciplineCodeToProductType(code2);
                 RevitProduct revitProduct = new RevitProduct(new Guid(productCode), product, architecture, version);
                 int code3 = int.Parse(match.Result("${Language}"), NumberStyles.AllowHexSpecifier);
-                revitProduct.setLanguage(RevitProductUtility.convertLanguageCodeToType(code3));
+                revitProduct.setLanguage(RevitProductUtility.ConvertLanguageCodeToType(code3));
                 revitProduct.setReleaseSubVersion("2021.0");
                 string text = new string(' ', 260);
                 string text2 = new string(' ', 260);
                 int length = 260;
                 int length2 = 260;
-                RevitProductUtility.MsiGetProductInfo(productCode, "ProductName", text, out length);
-                RevitProductUtility.MsiGetProductInfo(productCode, "InstallLocation", text2, out length2);
+                Win32API.MsiGetProductInfo(productCode, "ProductName", text, out length);
+                Win32API.MsiGetProductInfo(productCode, "InstallLocation", text2, out length2);
                 text = text.Substring(0, length);
                 text2 = text2.Substring(0, length2);
                 revitProduct.SetName(text);
                 revitProduct.SetInstallLocation(text2);
-                uint subversion = (uint) int.Parse(match.Result("${Subversion}"), NumberStyles.AllowHexSpecifier);
+                uint subversion = (uint)int.Parse(match.Result("${Subversion}"), NumberStyles.AllowHexSpecifier);
                 revitProduct.setSubversion(subversion);
                 revitProduct.SetAllUsersAddInFolder(
                     Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
@@ -387,25 +363,25 @@ namespace RevitLauncher.Utils
                 return revitProduct;
             }
 
-            return RevitProductUtility.getInstalledProductInfo(productCode);
+            return RevitProductUtility.GetInstalledProductInfo(productCode);
         }
 
         /// <summary> Is used to store all the RevitProduct which can be supported by this RevitAddInUtility.</summary>
-        private static Hashtable m_productsHashtable = null;
+        private static Hashtable _mProductsHashtable = null;
 
-        private static UIntPtr HKEY_LOCAL_MACHINE = new UIntPtr(2147483650u);
+        private static UIntPtr _hkeyLocalMachine = new UIntPtr(2147483650u);
 
-        private const int KEY_READ = 131097;
+        private const int KeyRead = 131097;
 
-        private const int KEY_WOW64_64KEY = 256;
+        private const int KeyWow6464Key = 256;
 
-        private const int KEY_WOW64_32KEY = 512;
+        private const int KeyWow6432Key = 512;
 
-        private const int GUIDSTRING_SIZE = 38;
+        private const int GuidStringSize = 38;
 
-        private const string REVITDB_COMPONENT_ID = "{DF7D485F-B8BA-448E-A444-E6FB1C258912}";
+        private const string RevitDBComponentID = "{DF7D485F-B8BA-448E-A444-E6FB1C258912}";
 
-        private const int MAX_SIZE = 260;
+        private const int MaxSize = 260;
 
         private const string ReleaseSubVersion = "2021.0";
     }

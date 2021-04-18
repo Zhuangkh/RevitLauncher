@@ -24,7 +24,7 @@ namespace RevitLauncher
         private ContextMenuStrip menu = new ContextMenuStrip();
 
         /// <summary>
-        /// 检测ContextMenu可用时更新ContextMenu
+        /// Check if ContextMenu is available when updating ContextMenu
         /// </summary>
         /// <returns></returns>
         protected override bool CanShowMenu()
@@ -38,7 +38,7 @@ namespace RevitLauncher
         }
 
         /// <summary>
-        /// 更新ContextMenu菜单
+        /// Update ContextMenu
         /// </summary>
         private void Update()
         {
@@ -47,14 +47,14 @@ namespace RevitLauncher
         }
 
         /// <summary>
-        /// 创建ContextMenu
+        /// Create ContextMenu
         /// </summary>
         /// <returns></returns>
         protected override ContextMenuStrip CreateMenu()
         {
             menu.Items.Clear();
 
-            #region 主菜单
+            #region Main Menu
             var launcherItem = new ToolStripMenuItem()
             {
                 Text = "Revit Launcher",
@@ -62,7 +62,7 @@ namespace RevitLauncher
             };
             #endregion
 
-            #region 版本信息
+            #region Version Info
             var info = new RevitFileInfo(SelectedItemPaths.First());
             var verItem = new ToolStripMenuItem()
             {
@@ -89,7 +89,7 @@ namespace RevitLauncher
             }
             #endregion
 
-            #region 当前存在进程菜单
+            #region Current presence process menu
 
             List<ToolStripItem> processMenuItemsMatch = new List<ToolStripItem>();
             List<ToolStripItem> processMenuItemsNotMatch = new List<ToolStripItem>();
@@ -121,8 +121,8 @@ namespace RevitLauncher
                 }
             }
             #endregion
-            
-            #region 新进程菜单
+
+            #region New Process Menu
             var curItem = new ToolStripMenuItem()
             {
                 Text = $"对应版本新进程中打开",
@@ -211,7 +211,7 @@ namespace RevitLauncher
         }
 
         /// <summary>
-        /// 当前进程中打开
+        /// Open in the current process
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -235,7 +235,7 @@ namespace RevitLauncher
         }
 
         /// <summary>
-        /// 当前进程中打开
+        /// Switch to lock file process
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -248,7 +248,7 @@ namespace RevitLauncher
         }
 
         /// <summary>
-        /// 新进程打开
+        /// Open in new process
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

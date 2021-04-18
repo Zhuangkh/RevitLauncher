@@ -99,11 +99,11 @@ namespace RevitLauncher.Utils
 		internal bool getSubscriptionValue()
 		{
 			bool result = false;
-			string arg = RevitProductUtility.convertProductTypetoCode(this.Product);
+			string arg = RevitProductUtility.ConvertProductTypetoCode(this.Product);
 			ICollection<LanguageType> installedLanguages = this.GetInstalledLanguages();
 			foreach (LanguageType languageType in installedLanguages)
 			{
-				string arg2 = RevitProductUtility.convertLanguageTypeToCode(languageType);
+				string arg2 = RevitProductUtility.ConvertLanguageTypeToCode(languageType);
 				string name = string.Format("SOFTWARE\\Autodesk\\Revit\\{0}\\REVIT-{1}:{2}", this.Version.ToString().Replace("Revit", ""), arg, arg2);
 				RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(name);
 				if (registryKey != null)

@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 
-namespace RevitLauncher
+namespace RevitLauncher.Utils
 {
     public class ProcessUtils
     {
-        ///   <summary>   
-        ///   启动其他的应用程序   
-        ///   </summary>   
-        ///   <param name="file">应用程序名称</param>     
-        ///   <param name="args">命令行参数</param>   
-        public static bool StartProcess(string exe, string args)
+        /// <summary> 
+        /// Start external process 
+        /// </summary> 
+        /// <param name="application">application location</param> 
+        /// <param name="args">命令行参数</param> 
+        public static bool StartProcess(string application, string args)
         {
             try
             {
                 Process myprocess = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo(exe, $"\"{args}\"");
+                ProcessStartInfo startInfo = new ProcessStartInfo(application, $"\"{args}\"");
                 myprocess.StartInfo = startInfo;
                 myprocess.StartInfo.UseShellExecute = false;
                 myprocess.Start();
@@ -97,7 +96,7 @@ namespace RevitLauncher
             }
             finally
             {
-               Win32API.RmEndSession(handle);
+                Win32API.RmEndSession(handle);
             }
 
             return processes;
