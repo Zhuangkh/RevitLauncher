@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLauncher.Addin", "Revi
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RevitLauncher.Setup", "RevitLauncher.Setup\RevitLauncher.Setup.vdproj", "{53D85D63-B303-4710-91D5-46ED9A4ED8C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallerAction", "InstallerAction\InstallerAction.csproj", "{F8728E6E-183E-435C-A1E8-81FE80ED9A99}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{85327398-5779-4F24-9E0B-09BBBE5C8B6A}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\SharpShell.dll = Deploy\SharpShell.dll
+		Deploy\srm.exe = Deploy\srm.exe
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +45,6 @@ Global
 		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|Any CPU.ActiveCfg = Release
 		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|x64.ActiveCfg = Release
 		{53D85D63-B303-4710-91D5-46ED9A4ED8C6}.Release|x64.Build.0 = Release
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|x64.ActiveCfg = Debug|x64
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Debug|x64.Build.0 = Debug|x64
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|x64.ActiveCfg = Release|x64
-		{F8728E6E-183E-435C-A1E8-81FE80ED9A99}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

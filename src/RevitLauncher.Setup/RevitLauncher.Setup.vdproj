@@ -15,14 +15,32 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_7AF7348885474AD4BD9DE48AEA7CA03F"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_59C5FCB137AB31BA094C947E6428750A"
+        "OwnerKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_83195ED8ABF9451B8AF02D9B6287968F"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_59C5FCB137AB31BA094C947E6428750A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -97,60 +115,32 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_39E2569B31454B0587799AE4B3C75C4E"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_573A373BD778488A9BEBEC23523649AA"
             {
-            "Name" = "8:主输出 from InstallerAction (Active)"
+            "Name" = "8:srm.exe"
             "Condition" = "8:"
-            "Object" = "8:_7AF7348885474AD4BD9DE48AEA7CA03F"
-            "FileType" = "3:1"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_D9EA3EA4_5D04_4B49_878B_8A4D4F01A83E"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_5357E85FF78B4FC097C4593772D40754"
-            {
-            "Name" = "8:主输出 from InstallerAction (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_7AF7348885474AD4BD9DE48AEA7CA03F"
-            "FileType" = "3:1"
-            "InstallAction" = "3:1"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_7FAF9D7A_08BB_478E_BDAA_63F33E78831E"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_54BF4E803E7941348D3B0D462E3BC624"
-            {
-            "Name" = "8:主输出 from InstallerAction (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_7AF7348885474AD4BD9DE48AEA7CA03F"
-            "FileType" = "3:1"
-            "InstallAction" = "3:3"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_62C05963_AF6F_415B_AD47_0A70C0AAC3CC"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_84912AFA07244AD7B0F7CBC862ED41E6"
-            {
-            "Name" = "8:主输出 from InstallerAction (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_7AF7348885474AD4BD9DE48AEA7CA03F"
-            "FileType" = "3:1"
+            "Object" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+            "FileType" = "3:2"
             "InstallAction" = "3:4"
-            "Arguments" = "8:"
+            "Arguments" = "8:uninstall \"RevitLauncher.dll\""
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_DD68C5EE_DEB4_4024_B003_C378F8BEBD77"
+            "Identifier" = "8:_CBFB19CE_AA7B_46B5_A458_603912BB88B0"
             "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_FA587C56183D4E149C96BDCB229E2A5B"
+            {
+            "Name" = "8:srm.exe"
+            "Condition" = "8:"
+            "Object" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:install \"RevirLauncher.dll\" -codebase"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_79B13A20_AA40_41CC_8174_91330096488C"
+            "InstallerClass" = "11:FALSE"
             "CustomActionData" = "8:"
             }
         }
@@ -176,6 +166,68 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59C5FCB137AB31BA094C947E6428750A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SharpShell, Version=2.7.2.0, Culture=neutral, PublicKeyToken=f14dc899472fe6fb, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_59C5FCB137AB31BA094C947E6428750A"
+                    {
+                    "Name" = "8:SharpShell.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SharpShell.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ServerRegistrationManager, Version=2.7.2.0, Culture=neutral, PublicKeyToken=68bd4561cc3495fc, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A02753AD9E7A4D7FBBF93C45D3A6E247"
+                    {
+                    "Name" = "8:srm.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Deploy\\srm.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -266,7 +318,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RevitLauncher.Setup"
         "ProductCode" = "8:{1A71F325-30E9-4D18-BB70-10FB4CFE4157}"
-        "PackageCode" = "8:{98B2DB30-B74C-41C9-AFDC-0A6777927C12}"
+        "PackageCode" = "8:{3867ED22-1585-4E3A-99D6-BFB080032311}"
         "UpgradeCode" = "8:{F06E08D0-7BC5-488C-9D6D-60FB9FCF517E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -757,37 +809,9 @@
                 "ExcludeFilter" = "8:*.addin"
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7AF7348885474AD4BD9DE48AEA7CA03F"
-            {
-            "SourcePath" = "8:..\\InstallerAction\\obj\\Debug\\net452\\InstallerAction.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{F8728E6E-183E-435C-A1E8-81FE80ED9A99}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_83195ED8ABF9451B8AF02D9B6287968F"
             {
-            "SourcePath" = "8:..\\RevitLauncher.Addin\\obj\\Debug\\net452\\RevitLauncher.Addin.dll"
+            "SourcePath" = "8:..\\RevitLauncher.Addin\\obj\\Release\\net452\\RevitLauncher.Addin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_40E08F09D0BB482DA019B991DB411509"
@@ -864,34 +888,6 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:PublishItems"
-            "OutputProjectGuid" = "8:{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D3C46F1147B943C081ACCAE0E5DD7AF7"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:ContentFiles"
             "OutputProjectGuid" = "8:{04BA99D4-5BE1-4F57-A9BC-9DEDB708E168}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

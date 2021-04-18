@@ -21,6 +21,7 @@
       <Link>%(Filename)%(Extension)</Link>
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Remove="Deploy\srm.exe" />
     <Content Include="launchericon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
