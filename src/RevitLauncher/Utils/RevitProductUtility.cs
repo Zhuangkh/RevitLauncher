@@ -164,6 +164,8 @@ namespace RevitLauncher.Utils
                     return RevitVersion.Revit2021;
                 case 22:
                     return RevitVersion.Revit2022;
+                case 23:
+                    return RevitVersion.Revit2023;
                 default:
                     return RevitVersion.Unknown;
             }

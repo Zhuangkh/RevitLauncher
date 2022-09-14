@@ -34,6 +34,8 @@ namespace RevitLauncher.Utils
         /// <summary> Revit 2021. </summary>
         Revit2021,
         /// <summary> Revit 2022. </summary>
-        Revit2022
+        Revit2022,
+        /// <summary> Revit 2023. </summary>
+        Revit2023
     }
 }
