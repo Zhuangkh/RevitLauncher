@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  xmlns:desktop5="http://schemas.microsoft.com/appx/manifest/desktop/windows10/5"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap desktop4 com">
+
+	<Identity
+	  Name="98fb7d2e-dde8-4ec5-81e3-3257dfc53e73"
+	  Publisher="CN=Zhuangkh"
+	  Version="1.0.0.0" />
+
+	<Properties>
+		<DisplayName>RevitLauncher</DisplayName>
+		<PublisherDisplayName>Zhuangkh</PublisherDisplayName>
+		<Logo>Images\StoreLogo.png</Logo>
+	</Properties>
+
+	<Dependencies>
+		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+	</Dependencies>
+	<Resources>
+		<Resource Language="x-generate" />
+	</Resources>
+
+	<Applications>
+		<Application Id="App"
+		  Executable="$targetnametoken$.exe"
+		  EntryPoint="$targetentrypoint$">
+			<uap:VisualElements
+			  DisplayName="RevitLauncher"
+			  Description="RevitLauncher"
+			  BackgroundColor="transparent"
+			  Square150x150Logo="Images\Square150x150Logo.png"
+			  Square44x44Logo="Images\Square44x44Logo.png">
+				<uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+				<uap:SplashScreen Image="Images\SplashScreen.png" />
+			</uap:VisualElements>
+			
+			<Extensions>
+				<desktop4:Extension Category="windows.fileExplorerContextMenus">
+					<desktop4:FileExplorerContextMenus>
+						<desktop5:ItemType Type=".rvt">
+							<desktop5:Verb Id="RevitLauncher" Clsid="5444C4A1-D5CE-4126-A734-58836F177027" />
+						</desktop5:ItemType>
+						<desktop5:ItemType Type=".rfa">
+							<desktop5:Verb Id="RevitLauncher" Clsid="5444C4A1-D5CE-4126-A734-58836F177027" />
+						</desktop5:ItemType>
+					</desktop4:FileExplorerContextMenus>
+				</desktop4:Extension>
+
+				<com:Extension Category="windows.comServer">
+					<com:ComServer>
+						<com:SurrogateServer AppId="B9874C52-CF11-426B-AA1A-66F7F40FB219" DisplayName="RevitLauncher">
+							<com:Class Id="5444C4A1-D5CE-4126-A734-58836F177027" Path="RevitLauncher.ShellExtension\RevitLauncher.ShellExtension.comhost.dll" 
+									   ThreadingModel="Both" ProgId="Zhuangkh.RevitLauncher" />
+						</com:SurrogateServer>
+
+						<com:ProgId Id="Zhuangkh.RevitLauncher" Clsid="5444C4A1-D5CE-4126-A734-58836F177027" />
+					</com:ComServer>
+				</com:Extension>
+			</Extensions>
+		</Application>
+	</Applications>
+
+	<Capabilities>
+		<Capability Name="internetClient" />
+		<rescap:Capability Name="runFullTrust" />
+	</Capabilities>
+</Package>
