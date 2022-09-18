@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Windows.Foundation.Collections;
 
 namespace RevitLauncher.ShellExtension.Shell32
 {

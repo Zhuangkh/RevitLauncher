@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using RevitLauncher.ShellExtension.Shell32;
@@ -17,10 +16,17 @@ namespace RevitLauncher.ShellExtension
     {
         public override EXPCMDFLAGS Flags { get; set; } = EXPCMDFLAGS.ECF_HASSUBCOMMANDS;
 
-        public bool flag { get; set; } = false;
         public override EXPCMDSTATE GetState(IEnumerable<string> selectedFiles)
         {
-            return selectedFiles.Any(IsRevitFile) ? EXPCMDSTATE.ECS_ENABLED : EXPCMDSTATE.ECS_HIDDEN;
+            if (selectedFiles.Any(IsRevitFile) && selectedFiles.Count() == 1)
+            {
+                var subCommands = new List<BaseExplorerCommand>();
+                subCommands.Add(new VerInfoCommand(selectedFiles.First()));
+                this.SubCommands = subCommands;
+                return EXPCMDSTATE.ECS_ENABLED;
+            }
+
+            return EXPCMDSTATE.ECS_ENABLED;
         }
 
         public override string GetTitle(IEnumerable<string> selectedFiles)
