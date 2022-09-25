@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.IO.Pipes;
 using System.Text;
 using OpenMcdf;
 
@@ -22,9 +23,19 @@ namespace RevitLauncher.Core
         public RevitFileInfo(string filePath)
         {
             FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            CompoundFile compoundFile = new CompoundFile(fileStream, CFSUpdateMode.ReadOnly, CFSConfiguration.Default);
-            CFStream stream = compoundFile.RootStorage.GetStream(_infoStream);
-            string rawString = Encoding.UTF8.GetString(stream.GetData());
+            Init(fileStream);
+        }
+
+        public RevitFileInfo(Stream stream)
+        {
+            Init(stream);
+        }
+
+        private void Init(Stream stream)
+        {
+            CompoundFile compoundFile = new CompoundFile(stream, CFSUpdateMode.ReadOnly, CFSConfiguration.Default);
+            CFStream cfStream = compoundFile.RootStorage.GetStream(_infoStream);
+            string rawString = Encoding.UTF8.GetString(cfStream.GetData());
             compoundFile.Close();
 
             var fileInfoDatas = rawString.Replace("\0", "").Split(new string[] { "\r\n", "\t" }, StringSplitOptions.RemoveEmptyEntries);

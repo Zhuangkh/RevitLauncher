@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://schemas.microsoft.com/windows/2006/propertydescription"
+        schemaVersion="1.0">
+    <propertyDescriptionList publisher="Zhuangkh" product="RevitLauncher">
+        <propertyDescription name="REVIT.VERSION" formatID="{AD36148C-0DA3-4145-ADAD-0DDCCF79D4AE}" propID="88">
+            <description>Revit File Version</description>
+            <searchInfo inInvertedIndex="true" isColumn="true" columnIndexType="OnDisk"/>
+            <typeInfo type="String" multipleValues="false" isViewable="true" isQueryable="true"/>
+            <labelInfo label="Revit Version" invitationText=" " />
+        </propertyDescription>
+    </propertyDescriptionList>
+</schema>

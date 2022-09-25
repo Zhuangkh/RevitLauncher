@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLauncher.ShellExtensio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLauncher.Core", "RevitLauncher.Core\RevitLauncher.Core.csproj", "{2828F368-9EB5-407F-B5AC-FA2B924BBDE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitLauncher.InstallAction", "RevitLauncher.InstallAction\RevitLauncher.InstallAction.csproj", "{07E62775-CBDB-4EDE-874F-5AD5249A2D62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,26 @@ Global
 		{2828F368-9EB5-407F-B5AC-FA2B924BBDE0}.Release|x64.Build.0 = Release|Any CPU
 		{2828F368-9EB5-407F-B5AC-FA2B924BBDE0}.Release|x86.ActiveCfg = Release|Any CPU
 		{2828F368-9EB5-407F-B5AC-FA2B924BBDE0}.Release|x86.Build.0 = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|ARM.Build.0 = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|x64.Build.0 = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Debug|x86.Build.0 = Debug|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|ARM.ActiveCfg = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|ARM.Build.0 = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|ARM64.Build.0 = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|x64.ActiveCfg = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|x64.Build.0 = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|x86.ActiveCfg = Release|Any CPU
+		{07E62775-CBDB-4EDE-874F-5AD5249A2D62}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
