@@ -10,7 +10,7 @@
   xmlns:desktop5="http://schemas.microsoft.com/appx/manifest/desktop/windows10/5"
   xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
   xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
-  IgnorableNamespaces="uap uap4 desktop4 desktop2 desktop5 com">
+  IgnorableNamespaces="rescap uap uap4 desktop4 desktop2 desktop5 com">
 
 	<Identity
 	  Name="98fb7d2e-dde8-4ec5-81e3-3257dfc53e73"
@@ -30,15 +30,21 @@
 		<Resource Language="x-generate" />
 	</Resources>
 
-	<!--<Extensions>
+	<Extensions>
 		<desktop6:Extension Category="windows.customInstall">
-			<desktop6:CustomInstall Folder="InstallAction">
+			<desktop6:CustomInstall Folder="RevitLauncher.InstallAction">
 				<desktop6:InstallActions>
-					<desktop6:InstallAction Name="Install" File="aa.exe"/>
+					<desktop6:InstallAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-i"/>
 				</desktop6:InstallActions>
+				<desktop6:RepairActions>
+					<desktop6:RepairAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-i"/>
+				</desktop6:RepairActions>
+				<desktop6:UninstallActions>
+					<desktop6:UninstallAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-u"/>
+				</desktop6:UninstallActions>
 			</desktop6:CustomInstall>
 		</desktop6:Extension>
-	</Extensions>-->
+	</Extensions>
 	
 	<Applications>
 		<Application Id="App"
@@ -67,7 +73,6 @@
 						</uap:SupportedFileTypes>
 						<desktop2:DesktopPropertyHandler  Clsid ="6542121F-1D79-4A27-9471-F80277DA8535"/>
 					</uap:FileTypeAssociation>
-
 				</uap:Extension>
 
 				<desktop4:Extension Category="windows.fileExplorerContextMenus">
@@ -105,8 +110,8 @@
 	</Applications>
 
 	<Capabilities>
-		<rescap:Capability Name="runFullTrust" />
+		<rescap:Capability Name="customInstallActions"/>
 		<Capability Name="internetClient" />
-		<!--<Capability Name="customInstallActions"/>-->
+		<rescap:Capability Name="runFullTrust" />
 	</Capabilities>
 </Package>

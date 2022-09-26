@@ -37,11 +37,11 @@ namespace RevitLauncher.InstallAction
                         break;
                 }
             }
-           
+
 
         }
 
-       static void Register()
+        static void Register()
         {
             var key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PropertySystem\\PropertyHandlers\\", true);
             key.CreateSubKey(".rte", RegistryKeyPermissionCheck.ReadWriteSubTree);
@@ -57,18 +57,18 @@ namespace RevitLauncher.InstallAction
             key.SetValue("", "Revit Property Handler");
             key.SetValue("ManualSafeSave ", 1);
             key.CreateSubKey("InProcServer32", RegistryKeyPermissionCheck.ReadWriteSubTree);
-            key.OpenSubKey("InProcServer32", true).SetValue("", @"..\RevitLauncher.ShellExtension\RevitLauncher.ShellExtension.comhost.dll");
+            key.OpenSubKey("InProcServer32", true).SetValue("", new FileInfo(Directory.GetParent(Assembly.GetExecutingAssembly().Location) + @"..\RevitLauncher.ShellExtension\RevitLauncher.ShellExtension.comhost.dll").FullName);
             key.OpenSubKey("InProcServer32", true).SetValue("ThreadingModel", "Apartment");
         }
 
         static void Unregister()
         {
             var key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PropertySystem\\PropertyHandlers\\", true);
-            key.DeleteSubKey(".rte");
-            key.DeleteSubKey(".rvt");
-            key.DeleteSubKey(".rft");
-            key.DeleteSubKey(".rfa");
-            Registry.ClassesRoot.DeleteSubKey("CLSID\\{6542121F-1D79-4A27-9471-F80277DA8535}");
+            key.DeleteSubKey(".rte", false);
+            key.DeleteSubKey(".rvt", false);
+            key.DeleteSubKey(".rft", false);
+            key.DeleteSubKey(".rfa", false);
+            Registry.ClassesRoot.DeleteSubKey("CLSID\\{6542121F-1D79-4A27-9471-F80277DA8535}", false);
         }
     }
 }
