@@ -1,15 +1,11 @@
-﻿using System.Linq.Expressions;
-using System.Reflection;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
 using System.Security;
 
-namespace RevitLauncher.ShellExtension.PropSys
+namespace RevitLauncher.ShellExtension.Interop.PropSys
 {
     [StructLayout(LayoutKind.Explicit, Size = 16, Pack = 8)]
-    public sealed class PROPVARIANT :  IDisposable
+    public sealed class PROPVARIANT : IDisposable
     {
         [FieldOffset(0)] public VarEnum vt;
 

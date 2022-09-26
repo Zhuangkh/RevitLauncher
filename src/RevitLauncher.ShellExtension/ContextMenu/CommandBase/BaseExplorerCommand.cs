@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using RevitLauncher.ShellExtension.Shell32;
+using RevitLauncher.ShellExtension.Interop;
+using RevitLauncher.ShellExtension.Interop.Shell32;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.ContextMenu.CommandBase
 {
     public abstract class BaseExplorerCommand : IExplorerCommand
     {
@@ -23,7 +24,7 @@ namespace RevitLauncher.ShellExtension
 
         void IExplorerCommand.GetTitle(IShellItemArray itemArray, out string title)
         {
-            title = GetTitle((itemArray).GetFilePaths());
+            title = GetTitle(itemArray.GetFilePaths());
         }
 
         void IExplorerCommand.GetIcon(IShellItemArray itemArray, out string resourceString)
@@ -33,7 +34,7 @@ namespace RevitLauncher.ShellExtension
 
         void IExplorerCommand.GetToolTip(IShellItemArray itemArray, out string tooltip)
         {
-            tooltip = GetToolTip((itemArray).GetFilePaths());
+            tooltip = GetToolTip(itemArray.GetFilePaths());
         }
 
         void IExplorerCommand.GetCanonicalName(out Guid guid)
@@ -43,12 +44,12 @@ namespace RevitLauncher.ShellExtension
 
         void IExplorerCommand.GetState(IShellItemArray itemArray, bool okToBeShow, out EXPCMDSTATE commandState)
         {
-            commandState = GetState((itemArray).GetFilePaths());
+            commandState = GetState(itemArray.GetFilePaths());
         }
 
         void IExplorerCommand.Invoke(IShellItemArray itemArray, object bindCtx)
         {
-            Invoke((itemArray).GetFilePaths());
+            Invoke(itemArray.GetFilePaths());
         }
 
         void IExplorerCommand.GetFlags(out EXPCMDFLAGS flags)

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using RevitLauncher.ShellExtension.Shell32;
+using RevitLauncher.ShellExtension.Interop;
+using RevitLauncher.ShellExtension.Interop.Shell32;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.ContextMenu.CommandBase
 {
     public class EnumExplorerCommand : IEnumExplorerCommand
     {
@@ -18,14 +16,14 @@ namespace RevitLauncher.ShellExtension
             this.commands = commands.ToArray();
         }
 
-        public HRESULT Next(uint celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Interface, SizeParamIndex = 0)]  IExplorerCommand[] pUICommand, out uint pceltFetched)
+        public HRESULT Next(uint celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Interface, SizeParamIndex = 0)] IExplorerCommand[] pUICommand, out uint pceltFetched)
         {
             var hr = HRESULT.S_FALSE;
             pceltFetched = 0;
             if (index <= commands.Length)
             {
                 uint uIndex = 0;
-                while (uIndex < celt && index < commands.Length )
+                while (uIndex < celt && index < commands.Length)
                 {
                     pUICommand[uIndex] = commands[index];
                     uIndex++;

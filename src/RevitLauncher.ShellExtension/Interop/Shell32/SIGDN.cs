@@ -1,4 +1,4 @@
-﻿namespace RevitLauncher.ShellExtension.Shell32
+﻿namespace RevitLauncher.ShellExtension.Interop.Shell32
 {
     /// <summary>
     /// https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/ne-shobjidl_core-sigdn

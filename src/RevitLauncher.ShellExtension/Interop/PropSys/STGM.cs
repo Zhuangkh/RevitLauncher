@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RevitLauncher.ShellExtension.PropSys
+namespace RevitLauncher.ShellExtension.Interop.PropSys
 {
     [Flags]
     public enum STGM

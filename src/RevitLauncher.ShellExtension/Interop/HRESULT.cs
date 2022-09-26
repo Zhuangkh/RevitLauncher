@@ -1,4 +1,4 @@
-﻿namespace RevitLauncher.ShellExtension
+﻿namespace RevitLauncher.ShellExtension.Interop
 {
     public enum HRESULT : uint
     {

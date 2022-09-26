@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using RevitLauncher.ShellExtension.Shell32;
+using RevitLauncher.ShellExtension.ContextMenu.CommandBase;
+using RevitLauncher.ShellExtension.Interop.Shell32;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.ContextMenu
 {
     [ComVisible(true)]
     [Guid("5444C4A1-D5CE-4126-A734-58836F177027")]
@@ -22,7 +21,7 @@ namespace RevitLauncher.ShellExtension
             {
                 var subCommands = new List<BaseExplorerCommand>();
                 subCommands.Add(new VerInfoCommand(selectedFiles.First()));
-                this.SubCommands = subCommands;
+                SubCommands = subCommands;
                 return EXPCMDSTATE.ECS_ENABLED;
             }
 

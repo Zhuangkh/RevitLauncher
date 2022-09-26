@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RevitLauncher.ShellExtension.Shell32
+namespace RevitLauncher.ShellExtension.Interop.Shell32
 {
     /// <summary>
     /// https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/nn-shobjidl_core-ishellitemarray
@@ -13,7 +13,7 @@ namespace RevitLauncher.ShellExtension.Shell32
     {
         [return: MarshalAs(UnmanagedType.Interface, IidParameterIndex = 2)]
         object BindToHandler(object pbc, in Guid rbhid, in Guid riid);
-        
+
         [return: MarshalAs(UnmanagedType.Interface, IidParameterIndex = 1)]
         object GetPropertyStore(uint flags, in Guid riid);
 

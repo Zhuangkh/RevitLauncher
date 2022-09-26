@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.PropertyHandler
 {
     public static class IStreamExtensions
     {

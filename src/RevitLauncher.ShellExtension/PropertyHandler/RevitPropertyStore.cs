@@ -1,5 +1,6 @@
 ﻿using RevitLauncher.Core;
-using RevitLauncher.ShellExtension.PropSys;
+using RevitLauncher.ShellExtension.Interop;
+using RevitLauncher.ShellExtension.Interop.PropSys;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +11,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.PropertyHandler
 {
     [ComVisible(true)]
     [Guid("6542121F-1D79-4A27-9471-F80277DA8535")]

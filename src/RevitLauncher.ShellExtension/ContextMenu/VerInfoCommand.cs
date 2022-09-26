@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using RevitLauncher.Core;
-using RevitLauncher.ShellExtension.Shell32;
+using RevitLauncher.ShellExtension.ContextMenu.CommandBase;
+using RevitLauncher.ShellExtension.Interop.Shell32;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.ContextMenu
 {
     public class VerInfoCommand : BaseExplorerCommand
     {

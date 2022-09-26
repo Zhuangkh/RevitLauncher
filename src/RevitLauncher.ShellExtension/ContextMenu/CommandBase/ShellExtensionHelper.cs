@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using RevitLauncher.ShellExtension.Shell32;
+using RevitLauncher.ShellExtension.Interop.Shell32;
 
-namespace RevitLauncher.ShellExtension
+namespace RevitLauncher.ShellExtension.ContextMenu.CommandBase
 {
     public static class ShellExtensionHelper
     {
