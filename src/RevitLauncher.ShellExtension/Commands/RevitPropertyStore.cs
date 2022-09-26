@@ -21,7 +21,7 @@ namespace RevitLauncher.ShellExtension
         private static PROPERTYKEY rKey = new PROPERTYKEY(VersionPropdescId, 88);
         private IStream _pstream;
         private STGM _grfMode;
-        private string version;
+        private string version = "";
 
         public void Initialize(IStream pstream, STGM grfMode)
         {
@@ -36,50 +36,39 @@ namespace RevitLauncher.ShellExtension
 
         public HRESULT IsPropertyWritable(in PROPERTYKEY key)
         {
-            if (key.FmtId == VersionPropdescId)
-            {
-                return HRESULT.S_OK;
-            }
-            return HRESULT.S_FALSE;
-        }
-
-        public HRESULT GetCount([Out] out uint propertyCount)
-        {
-            propertyCount = 1;
-            return HRESULT.S_OK;
-        }
-
-        public HRESULT GetAt([In] uint propertyIndex, out PROPERTYKEY key)
-        {
-            if (propertyIndex == 0)
-            {
-                key = rKey;
-                return HRESULT.S_OK;
-            }
-            key = default(PROPERTYKEY);
-            return HRESULT.S_FALSE;
-        }
-
-        HRESULT IPropertyStore.GetValue(ref PROPERTYKEY key, PropVariant pv)
-        {
             if (key == rKey)
             {
-                pv = new PropVariant(version) ;
-                return HRESULT.INPLACE_S_TRUNCATED;
+                return HRESULT.S_FALSE;
             }
-            pv = new PropVariant() { VarType = VarEnum.VT_EMPTY };
             return HRESULT.S_OK;
         }
 
-        HRESULT IPropertyStore.SetValue(ref PROPERTYKEY key, PropVariant pv)
+        public uint GetCount()
         {
-            return HRESULT.S_OK;
+            return 1;
         }
 
-        HRESULT IPropertyStore.Commit()
+        public PROPERTYKEY GetAt(uint iProp)
+        {
+            return rKey;
+        }
+
+        public void GetValue(in PROPERTYKEY pkey, PROPVARIANT pv)
+        {
+            if (pkey == rKey)
+            {
+                PROPVARIANT.InitPropVariantFromString(version, pv);
+            }
+        }
+
+        public void SetValue(in PROPERTYKEY pkey, PROPVARIANT pv)
+        {
+        }
+
+        public void Commit()
         {
             _pstream.Commit((int)HRESULT.S_OK);
-            return HRESULT.S_OK;
         }
+
     }
 }
