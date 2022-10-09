@@ -29,22 +29,6 @@
 	<Resources>
 		<Resource Language="x-generate" />
 	</Resources>
-
-	<Extensions>
-		<desktop6:Extension Category="windows.customInstall">
-			<desktop6:CustomInstall Folder="RevitLauncher.InstallAction">
-				<desktop6:InstallActions>
-					<desktop6:InstallAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-i"/>
-				</desktop6:InstallActions>
-				<desktop6:RepairActions>
-					<desktop6:RepairAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-i"/>
-				</desktop6:RepairActions>
-				<desktop6:UninstallActions>
-					<desktop6:UninstallAction Name="RevitLauncher" File="RevitLauncher.InstallAction.exe" Arguments="-u"/>
-				</desktop6:UninstallActions>
-			</desktop6:CustomInstall>
-		</desktop6:Extension>
-	</Extensions>
 	
 	<Applications>
 		<Application Id="App"
@@ -60,9 +44,7 @@
 				<uap:SplashScreen Image="Images\SplashScreen.png" />
 			</uap:VisualElements>
 
-			
 			<Extensions>
-
 				<uap:Extension Category="windows.fileTypeAssociation">
 					<uap:FileTypeAssociation Name="revit" >
 						<uap:SupportedFileTypes>
@@ -110,7 +92,6 @@
 	</Applications>
 
 	<Capabilities>
-		<rescap:Capability Name="customInstallActions"/>
 		<Capability Name="internetClient" />
 		<rescap:Capability Name="runFullTrust" />
 	</Capabilities>
