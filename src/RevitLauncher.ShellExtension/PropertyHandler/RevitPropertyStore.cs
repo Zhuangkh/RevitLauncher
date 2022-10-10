@@ -1,4 +1,5 @@
-﻿using RevitLauncher.Core;
+﻿using OpenMcdf;
+using RevitLauncher.Core;
 using RevitLauncher.ShellExtension.Interop;
 using RevitLauncher.ShellExtension.Interop.PropSys;
 using System;
@@ -15,24 +16,16 @@ namespace RevitLauncher.ShellExtension.PropertyHandler
 {
     [ComVisible(true)]
     [Guid("6542121F-1D79-4A27-9471-F80277DA8535")]
-    public class RevitPropertyStore : IPropertyStore, IInitializeWithStream, IPropertyStoreCapabilities
+    public class RevitPropertyStore : IPropertyStore, IInitializeWithFile, IPropertyStoreCapabilities
     {
         private static Guid VersionPropdescId = new("{AD36148C-0DA3-4145-ADAD-0DDCCF79D4AE}");
         private static PROPERTYKEY rKey = new PROPERTYKEY(VersionPropdescId, 88);
-        private IStream _pstream;
-        //private STGM _grfMode;
-        private string version = "";
+        private string version = "unknown";
 
-        public void Initialize(IStream pstream, STGM grfMode)
+        public void Initialize([In, MarshalAs(UnmanagedType.LPWStr)] string pszFilePath, STGM grfMode)
         {
-            _pstream = pstream;
-            //_grfMode = grfMode;
-            using (MemoryStream ms = pstream.ReadToMemoryStream())
-            {
-                var info = new RevitFileInfo(ms);
-                version = info.SavedInVersion;
-            }
-            //this.Commit();
+            var info = new RevitFileInfo(pszFilePath);
+            version = info.SavedInVersion;
         }
 
         public HRESULT IsPropertyWritable(in PROPERTYKEY key)
@@ -62,14 +55,9 @@ namespace RevitLauncher.ShellExtension.PropertyHandler
             }
         }
 
-        public void SetValue(in PROPERTYKEY pkey, PROPVARIANT pv)
-        {
-        }
+        public void SetValue(in PROPERTYKEY pkey, PROPVARIANT pv) { }
 
-        public void Commit()
-        {
-            _pstream.Commit((int)HRESULT.S_OK);
-        }
+        public void Commit() { }
 
     }
 }
