@@ -81,7 +81,7 @@ namespace RevitLauncher.Core.Utils
         [DllImport("msi.dll", CharSet = CharSet.Unicode)]
         internal static extern int MsiGetProductInfo(string product, string property, string valueBuf, out int len);
 
-        internal struct WindowInfo
+        public struct WindowInfo
         {
             public IntPtr HWnd;
             public IntPtr Pid;
@@ -89,7 +89,7 @@ namespace RevitLauncher.Core.Utils
             public string ClassName;
         }
 
-        internal static WindowInfo[] GetAllDesktopWindows()
+        public static WindowInfo[] GetAllDesktopWindows()
         {
             List<WindowInfo> wndList = new List<WindowInfo>();
 
