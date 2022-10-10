@@ -3,35 +3,39 @@
                     AutodeskProduct="Revit" ProductType="Application"
                     Author="Zhuangkh" Name="RevitLauncher"
                     ProductCode="1A71F325-30E9-4D18-BB70-10FB4CFE4157">
-  <CompanyDetails Name="Zhuangkh" Url="https://zhuangkh.com"
-                Email="einsam0413@outlook.com"/>
-  <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2016" SeriesMax="R2021"/>
-  <Components Description="2016">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2016" SeriesMax="R2016"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2017">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2017" SeriesMax="R2017"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2018">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2018" SeriesMax="R2018"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2019">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2019" SeriesMax="R2019"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2020">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2020" SeriesMax="R2020"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2021">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2021" SeriesMax="R2021"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
-  <Components Description="2022">
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="2022" SeriesMax="2022"/>
-    <ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
-  </Components>
+	<CompanyDetails Name="Zhuangkh" Url="https://zhuangkh.com"
+				  Email="einsam0413@outlook.com"/>
+	<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2016" SeriesMax="R2023"/>
+	<Components Description="2016">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2016" SeriesMax="R2016"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2017">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2017" SeriesMax="R2017"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2018">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2018" SeriesMax="R2018"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2019">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2019" SeriesMax="R2019"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2020">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2020" SeriesMax="R2020"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2021">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2021" SeriesMax="R2021"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2022">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="2022" SeriesMax="2022"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
+	<Components Description="2023">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="2023" SeriesMax="2023"/>
+		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
+	</Components>
 </ApplicationPackage>
