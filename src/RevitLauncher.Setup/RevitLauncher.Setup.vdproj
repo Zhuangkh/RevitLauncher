@@ -15,32 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_59C5FCB137AB31BA094C947E6428750A"
-        "OwnerKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_83195ED8ABF9451B8AF02D9B6287968F"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_59C5FCB137AB31BA094C947E6428750A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -119,7 +95,7 @@
             {
             "Name" = "8:srm.exe"
             "Condition" = "8:"
-            "Object" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+            "Object" = "8:"
             "FileType" = "3:2"
             "InstallAction" = "3:4"
             "Arguments" = "8:uninstall \"RevitLauncher.dll\""
@@ -133,7 +109,7 @@
             {
             "Name" = "8:srm.exe"
             "Condition" = "8:"
-            "Object" = "8:_A02753AD9E7A4D7FBBF93C45D3A6E247"
+            "Object" = "8:"
             "FileType" = "3:2"
             "InstallAction" = "3:2"
             "Arguments" = "8:install \"RevirLauncher.dll\" -codebase"
@@ -166,68 +142,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59C5FCB137AB31BA094C947E6428750A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SharpShell, Version=2.7.2.0, Culture=neutral, PublicKeyToken=f14dc899472fe6fb, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_59C5FCB137AB31BA094C947E6428750A"
-                    {
-                    "Name" = "8:SharpShell.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SharpShell.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A02753AD9E7A4D7FBBF93C45D3A6E247"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ServerRegistrationManager, Version=2.7.2.0, Culture=neutral, PublicKeyToken=68bd4561cc3495fc, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_A02753AD9E7A4D7FBBF93C45D3A6E247"
-                    {
-                    "Name" = "8:srm.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Deploy\\srm.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_47E567E7B7D9408C9ACA4C64C3D82C25"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -811,7 +725,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_83195ED8ABF9451B8AF02D9B6287968F"
             {
-            "SourcePath" = "8:..\\RevitLauncher.Addin\\obj\\Release\\net452\\RevitLauncher.Addin.dll"
+            "SourcePath" = "8:..\\RevitLauncher.Addin\\obj\\x64\\Debug\\net452\\RevitLauncher.Addin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_40E08F09D0BB482DA019B991DB411509"

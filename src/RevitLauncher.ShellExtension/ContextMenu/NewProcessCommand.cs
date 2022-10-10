@@ -1,28 +1,25 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
 using RevitLauncher.Core.Utils;
 using RevitLauncher.ShellExtension.ContextMenu.CommandBase;
 using RevitLauncher.ShellExtension.Interop.Shell32;
 
 namespace RevitLauncher.ShellExtension.ContextMenu
 {
-    public class LockingProcessCommand : BaseExplorerCommand
+    public class NewProcessCommand : BaseExplorerCommand
     {
-        private readonly Process process;
-        private readonly string title;
+        private readonly string file;
+        private readonly RevitProduct application;
+        private string title;
 
         public override EXPCMDFLAGS Flags { get; set; } = EXPCMDFLAGS.ECF_DEFAULT;
         public override string Icon { get; set; }
 
-        public LockingProcessCommand(Process process)
+        public NewProcessCommand(string file, RevitProduct application)
         {
-            this.process = process;
-            this.title = string.IsNullOrEmpty(process.MainWindowTitle)
-                   ? Win32API.GetAllDesktopWindows().First(x => x.Pid.ToInt32() == process.Id).WindowName
-                   : process.MainWindowTitle;
-            this.Icon = process.MainModule.FileName;
+            this.application = application;
+            this.Icon = $"{application.InstallLocation}Revit.exe";
+            this.title = application.Name;
+            this.file = file;
         }
 
         public override EXPCMDSTATE GetState(IEnumerable<string> selectedFiles)
@@ -42,7 +39,7 @@ namespace RevitLauncher.ShellExtension.ContextMenu
 
         public override void Invoke(IEnumerable<string> selectedFiles)
         {
-            ProcessUtils.SwitchToProcess(process);
+            ProcessUtils.StartProcess($"{application.InstallLocation}Revit.exe", file);
         }
     }
 }

@@ -4,32 +4,17 @@
     <OutputType>Exe</OutputType>
     <UseWpf>true</UseWpf>
     <TargetFramework>net462</TargetFramework>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>RevitLauncher.pfx</AssemblyOriginatorKeyFile>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Deploy\SharpShell.dll" />
-    <None Remove="Deploy\srm.config" />
-    <None Remove="Deploy\srm.exe" />
     <None Remove="launchericon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Deploy\**">
-      <Link>%(Filename)%(Extension)</Link>
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Remove="Deploy\srm.exe" />
     <Content Include="launchericon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OpenMcdf" Version="2.2.1.9" />
-    <PackageReference Include="SharpShell" Version="2.7.2" />
   </ItemGroup>
 
   <ItemGroup>
