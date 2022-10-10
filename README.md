@@ -6,9 +6,32 @@ Automatically detect the Revit file version, support opening the file in the new
 
 Supports ".rvt", ".rte", ".rft", ".rfa" 4 file extensions.
 
+## Screenshots
+
+### ConetxtMenu
+
+- Locking Process
+
+Click to switch to process who locking the file.
+
+- Exist Process (Match/Mismatch version)
+
+List all running revit processes. Click to opening the file in specified process.
+
+- New Process
+
+List all the revit versions installed on your computer. Click to starting a new Revit process and opening the file. 
+
+![ConetxtMenu](./screenshots/ContextMenu.png)
+
+### PropertyHandler
+
+Show `RevitVersion` info with a windows explorer column.
+
+![PropertyHandler](./screenshots/PropertyHandler.png)
+
 ## Third Party 
 
-- [SharpShell](https://github.com/dwmkerr/sharpshell)
 - [OpenMcdf](https://github.com/ironfede/openmcdf)
 
 ## Installation
