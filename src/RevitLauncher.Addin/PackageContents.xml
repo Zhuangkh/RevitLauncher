@@ -31,11 +31,11 @@
 		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
 	</Components>
 	<Components Description="2022">
-		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="2022" SeriesMax="2022"/>
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2022" SeriesMax="R2022"/>
 		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
 	</Components>
 	<Components Description="2023">
-		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="2023" SeriesMax="2023"/>
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2023" SeriesMax="R2023"/>
 		<ComponentEntry AppName="RevitLauncher" Version="1.0.0.0" ModuleName="./Contents/RevitLauncher.addin"/>
 	</Components>
 </ApplicationPackage>

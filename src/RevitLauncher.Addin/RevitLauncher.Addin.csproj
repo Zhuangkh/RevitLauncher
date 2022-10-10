@@ -24,9 +24,5 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="&quot;C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe&quot; sign /f $(ProjectDir)RevitLauncher.pfx /p te@3WuMK3wD9aF $(TargetPath)" />
-    </Target>
- 
 
 </Project>

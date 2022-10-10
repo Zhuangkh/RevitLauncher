@@ -91,34 +91,6 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_573A373BD778488A9BEBEC23523649AA"
-            {
-            "Name" = "8:srm.exe"
-            "Condition" = "8:"
-            "Object" = "8:"
-            "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:uninstall \"RevitLauncher.dll\""
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_CBFB19CE_AA7B_46B5_A458_603912BB88B0"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_FA587C56183D4E149C96BDCB229E2A5B"
-            {
-            "Name" = "8:srm.exe"
-            "Condition" = "8:"
-            "Object" = "8:"
-            "FileType" = "3:2"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:install \"RevirLauncher.dll\" -codebase"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_79B13A20_AA40_41CC_8174_91330096488C"
-            "InstallerClass" = "11:FALSE"
-            "CustomActionData" = "8:"
-            }
         }
         "DefaultFeature"
         {
@@ -232,7 +204,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RevitLauncher.Setup"
         "ProductCode" = "8:{1A71F325-30E9-4D18-BB70-10FB4CFE4157}"
-        "PackageCode" = "8:{3867ED22-1585-4E3A-99D6-BFB080032311}"
+        "PackageCode" = "8:{6084C443-0087-40AD-8B93-05BAC723261D}"
         "UpgradeCode" = "8:{F06E08D0-7BC5-488C-9D6D-60FB9FCF517E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -253,7 +225,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
