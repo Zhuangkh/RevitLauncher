@@ -8,6 +8,7 @@ namespace RevitLauncher.ShellExtension.ContextMenu
     public class VerInfoCommand : BaseExplorerCommand
     {
         public override EXPCMDFLAGS Flags { get; set; } = EXPCMDFLAGS.ECF_DEFAULT;
+        public override string Icon { get; set; }
 
         private string version;
 

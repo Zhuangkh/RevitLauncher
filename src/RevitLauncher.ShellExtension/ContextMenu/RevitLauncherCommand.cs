@@ -14,6 +14,7 @@ namespace RevitLauncher.ShellExtension.ContextMenu
     public class RevitLauncherCommand : BaseExplorerCommand
     {
         public override EXPCMDFLAGS Flags { get; set; } = EXPCMDFLAGS.ECF_HASSUBCOMMANDS;
+        public override string Icon { get; set; } = Directory.GetParent(typeof(RevitLauncherCommand).Assembly.Location) + "\\launchericon.ico";
 
         public override EXPCMDSTATE GetState(IEnumerable<string> selectedFiles)
         {

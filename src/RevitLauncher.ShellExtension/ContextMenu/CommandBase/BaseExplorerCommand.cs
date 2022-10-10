@@ -11,6 +11,7 @@ namespace RevitLauncher.ShellExtension.ContextMenu.CommandBase
         public virtual Guid CanonicalName => GetType().GUID;
 
         public abstract EXPCMDFLAGS Flags { get; set; }
+        public abstract string Icon { get; set; }
 
         public virtual IEnumerable<BaseExplorerCommand> SubCommands { get; set; } = Array.Empty<BaseExplorerCommand>();
 
@@ -29,7 +30,11 @@ namespace RevitLauncher.ShellExtension.ContextMenu.CommandBase
 
         void IExplorerCommand.GetIcon(IShellItemArray itemArray, out string resourceString)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Icon))
+            {
+                throw new NotImplementedException();
+            }
+            resourceString = Icon;
         }
 
         void IExplorerCommand.GetToolTip(IShellItemArray itemArray, out string tooltip)

@@ -8,6 +8,14 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<EnableNETAnalyzers>False</EnableNETAnalyzers>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="launchericon.ico" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="launchericon.ico">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\RevitLauncher.Core\RevitLauncher.Core.csproj" />
